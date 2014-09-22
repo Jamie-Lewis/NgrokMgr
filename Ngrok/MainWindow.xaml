@@ -1,0 +1,26 @@
+﻿<Window x:Class="Ngrok.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ngrok :: Internet Internet Services Manager" Height="350" Width="625" Icon="PerfCenterCpl.ico">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+   <StackPanel Orientation="Horizontal">
+      <Button Content="Start" Width="100" Margin="5" Command="{Binding StartSite}"/>
+      <Button Content="Stop" Width="100" Margin="5" Command="{Binding StopSite}"/>
+    </StackPanel>
+    <ListView Name="lvSites" Grid.Row="1" Margin="0" ItemsSource="{Binding Sites}">
+      <ListView.View>
+        <GridView>
+          <GridViewColumn Header="Site" Width="100" DisplayMemberBinding="{Binding Name}"/>
+          <GridViewColumn Header="URL" Width="200" DisplayMemberBinding="{Binding URL}"/>
+          <GridViewColumn Header="Forward To" Width="200" DisplayMemberBinding="{Binding ForwardTo}"/>
+          <GridViewColumn Header="Status" Width="75" DisplayMemberBinding="{Binding Status}"/>
+        </GridView>
+      </ListView.View>
+    </ListView>
+
+  </Grid>
+</Window>

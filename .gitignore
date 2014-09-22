@@ -1,0 +1,9 @@
+Version.cs
+*.suo
+gitignore
+bin
+obj
+
+.DS_Store
+packages/
+*.user
